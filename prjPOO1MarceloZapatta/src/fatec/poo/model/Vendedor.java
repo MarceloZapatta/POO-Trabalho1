@@ -19,12 +19,13 @@ public class Vendedor extends Pessoa {
     private ArrayList<Pedido> pedidos;
     private final DecimalFormat Formato;
     
-    public Vendedor(int codigo, String nome, double totalVendas) {
+    public Vendedor(int codigo, String nome, double taxaComissao) {
         super(codigo, nome);
         
-        this.pedidos = new ArrayList<Pedido>();
-        this.totalVendas = totalVendas;
+        this.pedidos = new ArrayList();
+        this.taxaComissao = taxaComissao;
         this.Formato = new DecimalFormat("#,##0.00");
+        this.totalVendas = 0;
     }
 
     public String getDataAdmissao() {
@@ -59,13 +60,13 @@ public class Vendedor extends Pessoa {
             totalComissao += valorComissao;
             totalPedidos += pedido.getTotal();
             
-            System.out.println("No. Pedido\tValor do Pedido\tTotal Comissão");
+            System.out.println("\nNo. Pedido\tValor do Pedido\t\tTotal Comissão");
             System.out.println(Integer.toString(pedido.getNumero()) +
-                    "\t" + this.Formato.format(pedido.getTotal()) +
-                    "\t" + this.Formato.format(valorComissao));
+                    "\t\t" + this.Formato.format(pedido.getTotal()) +
+                    "\t\t\t" + this.Formato.format(valorComissao));
         }
         
         System.out.println("\nTotal geral\t" + this.Formato.format(totalPedidos) + 
-                "\t" + this.Formato.format(totalComissao));
+                "\t\t\t" + this.Formato.format(totalComissao));
     }
 }

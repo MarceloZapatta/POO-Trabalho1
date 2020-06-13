@@ -16,7 +16,7 @@ public class Produto {
     private final int codigo;
     private final String descricao;
     private double preco;
-    private final int qtdeEstoque;
+    private int qtdeEstoque;
 
     public Produto(int codigo, String descricao, int qtdeEstoque) {
         this.codigo = codigo;
@@ -42,5 +42,9 @@ public class Produto {
 
     public int getQtdeEstoque() {
         return qtdeEstoque;
+    }
+    
+    public void setQtdEstoque(int quantidade) {
+        this.qtdeEstoque = quantidade;
     }
 }

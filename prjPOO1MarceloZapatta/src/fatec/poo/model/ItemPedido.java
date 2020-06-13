@@ -19,6 +19,11 @@ public class ItemPedido {
     public ItemPedido(Produto produto, int qtdeVend) {
         this.produto = produto;
         this.qtdeVend = qtdeVend;
+        
+        // TODO: realiza o calculo do subtotal
+        this.subTotal = qtdeVend * produto.getPreco();
+        
+        this.produto.setQtdEstoque(produto.getQtdeEstoque() - qtdeVend);
     }
 
     public int getQtdeVend() {
