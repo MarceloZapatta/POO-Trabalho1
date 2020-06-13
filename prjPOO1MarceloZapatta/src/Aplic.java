@@ -130,5 +130,6 @@ public class Aplic {
         v2.listarPedidos();
         v3.listarPedidos();
         v4.listarPedidos();
+        v5.listarPedidos();
     }
 }
